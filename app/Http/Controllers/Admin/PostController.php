@@ -46,10 +46,10 @@ class PostController extends Controller
 
         $data = $request->all();
 
-        if ($request->hasFile('thumbnail')){
-            $folder = date('Y-m-d');
-            $data['thumbnail'] = $request->file('thumbnail')->store("images/{$folder}");
-        }
+        // if ($request->hasFile('thumbnail')){
+        //     $folder = date('Y-m-d');
+        //     $data['thumbnail'] = $request->file('thumbnail')->store("images/{$folder}");
+        // }
 
         $data['thumbnail'] = Post::uploadImage($request);
   
