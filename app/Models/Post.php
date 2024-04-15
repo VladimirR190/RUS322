@@ -28,7 +28,7 @@ class Post extends Model
      * @return array
      */
 
-    public function sluggable()
+    public function sluggable():array
     {
         return [
             'slug' => [
@@ -37,18 +37,20 @@ class Post extends Model
         ];
     }
 
-    public static function uploadImage(Request $request, $image = null){
+    public static function uploadImage(Request $request, $image = null)
+    {
         if ($request->hasFile('thumbnail')){
             if ($image){
                 Storage::delete($image);
             }
-            $folder = date ('Y-m-d');
+            $folder = date('Y-m-d');
             return $request->file('thumbnail')->store("images/{$folder}");
         }
         return null;
     }
 
-    public function getImage(){
+    public function getImage()
+    {
         if (!$this->thumbnail){
             return asset("no-image.png");
         }

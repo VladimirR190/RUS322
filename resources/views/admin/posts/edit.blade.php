@@ -43,13 +43,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Контент</label>
-                                    <textarea name="content" class="form-control @error('contetn') is-invalid @enderror" id="content" rows="3">{{$post->content}}</textarea>
-                                </div>
+                                    <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content" rows="3">{{$post->content}}</textarea>                                </div>
                                 <div class="form-group">
                                     <label for="category_id">Категории</label>
                                     <select class="form-control @error('category_id') is-invalid @enderror" id="category_id">
                                         @foreach($categories as $k => $v)
-                                        <option value="{{ $k }}" @if($k == $post->category_id) selected @endif >{{ $v }}</option>
+                                        <option value="{{ $k }}" @if($k == $post->category_id) selected @endif>{{ $v }}</option>
                                         @endforeach
                                     </select>
                                 </div>

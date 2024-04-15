@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\TagController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\PostController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
@@ -33,8 +33,8 @@ Route::group(['prefix' => 'admin', 'namespece' => 'Admin'], function(){
     Route::get('/tags/create', [TagController::class, 'create'])->name('admin.tags.create');
     Route::resource('/tags', TagController::class);
 
-    
-    
+    Route::get('/posts/index', [PostController::class, 'index'])->name('admin.posts.index');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
     Route::resource('/posts', PostController::class);
 });
 

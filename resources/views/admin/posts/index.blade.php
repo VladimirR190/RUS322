@@ -30,14 +30,14 @@
                             <h3 class="card-title">Список статей</h3>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('posts.create')}}" class="btn btn-primary mb-3">Добавить катерогию</a>
+                            <a href="{{route('posts.store')}}" class="btn btn-primary mb-3">Добавить статью</a>
                             @if (count($posts))
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover text-nowrap">
                                     <thead>
                                         <tr>
                                             <th style="width: 30px;">#</th>
-                                            <th>НАименование</th>
+                                            <th>Наименование</th>
                                             <th>Кактегории</th>
                                             <th>Теги</th>
                                             <th>Дата</th>
@@ -51,7 +51,6 @@
                                             <td>{{$post->title}}</td>
                                             <td>{{$post->category->title}}</td>
                                             <td>{{$post->tags->pluck('title')->join(', ') }}</td>
-                                            
                                             <td>{{$post->tags}}</td>
                                             <td>{{$post->created_at}}</td>
                                             <td>
@@ -72,7 +71,7 @@
                                 </table>
                             </div>
                             @else
-                            <p>Статей нет...... пока</p>
+                            <p>Постов нет...... пока</p>
                             @endif
                         </div>
                         <!-- /.card-body -->

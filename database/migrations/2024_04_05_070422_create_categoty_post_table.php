@@ -11,17 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('categoty_post', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->text('description');
-            $table->text('content');
             $table->integer('category_id')->unsigned();
-            $table->integer('views')->unsigned()->default(0);
-            $table->string('thumbnail')->nullable();
+            $table->integer('post_id')->unsigned();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -30,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('categoty_post');
     }
 };
