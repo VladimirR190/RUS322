@@ -332,7 +332,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin/tags/index" class="nav-link">
+                                    <a href="/admin/tags" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Список тегов</p>
                                     </a>
