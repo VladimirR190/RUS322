@@ -262,17 +262,24 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin/categories/create" class="nav-link">
+                                    <a href="{{ route('posts.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Создание поста</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('categories.create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Создание категории</p>
                                     </a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a href="/admin/posts/create" class="nav-link">
+                                <li class="nav-item">
+                                    <a href="{{ route('tags.create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Создание поста</p>
+                                        <p>Новый тег</p>
                                     </a>
-                                </li> -->
+                                </li>
+
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -288,6 +295,12 @@
                                     <a href="{{ route('categories.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Список категории</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('categories.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Создание категории</p>
                                     </a>
                                 </li>
                             </ul>
@@ -325,7 +338,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/tags/create" class="nav-link">
+                                    <a href="{{ route('tags.create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Новый тег</p>
                                     </a>
