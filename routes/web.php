@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\UserController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
@@ -25,16 +26,12 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'namespece' => 'Admin'], function(){
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
-    Route::get('/categories/index', [CategoryController::class, 'index'])->name('admin.categories.index');
-    Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-    Route::resource('/categories', CategoryController::class);
 
-    Route::get('/tags/index', [TagController::class, 'index'])->name('admin.tags.index');
-    Route::get('/tags/create', [TagController::class, 'create'])->name('admin.tags.create');
+    Route::resource('/posts', PostController::class);
+    Route::resource('/categories', CategoryController::class);
     Route::resource('/tags', TagController::class);
 
-    Route::get('/posts/index', [PostController::class, 'index'])->name('admin.posts.index');
-    Route::get('/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
-    Route::resource('/posts', PostController::class);
+    Route::get('/register', [UserController::class, 'create'])->name('register.create');
+    Route::post('/register', [UserController::class, 'store'])->name('register.store');
 });
 

@@ -38,8 +38,9 @@
                                         <tr>
                                             <th style="width: 30px;">#</th>
                                             <th>Наименование</th>
+                                            <th>Категории</th>
                                             <th>Теги</th>
-                                            <th>Фто </th>
+                                            <th>Фото </th>
                                             <th>Дата</th>
                                             <th>Actions</th>
                                         </tr>
@@ -49,8 +50,9 @@
                                         <tr>
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->title}}</td>
-                                            <!-- <td>{{$post->category_id->title}}</td> -->
+                                            <td>{{ $post->category->title ?? '' }}</td>
                                             <td>{{$post->tags->pluck('title')->join(', ') }}</td>
+                                            <td>{{asset('/assets/images', $post->thumbnail)}}</td>
                                             <td>{{$post->created_at}}</td>
                                             <td>
                                                 <a href="{{ route('posts.edit', ['post' => $post->id])}}" class="btn btn-info btn-sm float-left mr-1">
