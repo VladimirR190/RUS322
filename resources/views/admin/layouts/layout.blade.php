@@ -247,7 +247,7 @@
                                 <li class="nav-item">
                                     <a href="{{ route('posts.create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Новая статья</p>
+                                        <p>Создание статья</p>
                                     </a>
                                 </li>
                             </ul>
