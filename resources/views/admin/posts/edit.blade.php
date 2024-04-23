@@ -64,8 +64,17 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" name="thumbnail" id="thumbnail" class="custom-file-input">
-                                            <label  class="custom-file-label" for="thumbnail">Choose file</label>
+                                            
+                                            
+                                            
+                                            <label  class="custom-file-label" for="thumbnail">
+                                            
+                                                Choose file
+                                           </label>
+
+                                           
                                         </div>
+                                        
                                     </div>
                                     <div><img src="{{ $post->getImage() }}" alt="" class="img-thumbnail mt-2" width="200"></div>
                                 </div>
