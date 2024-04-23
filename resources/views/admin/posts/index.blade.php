@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('content')
-
+<form enctype="multipart/form-data">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -52,7 +52,7 @@
                                             <td>{{$post->title}}</td>
                                             <td>{{ $post->category->title ?? '' }}</td>
                                             <td>{{$post->tags->pluck('title')->join(', ') }}</td>
-                                            <td>{{asset('/assets/images', $post->thumbnail)}}</td>
+                                            <td><img src="{{ asset('uploads/'.$post->thumbnail) }}  " width="200px" height="200px"></td>
                                             <td>{{$post->created_at}}</td>
                                             <td>
                                                 <a href="{{ route('posts.edit', ['post' => $post->id])}}" class="btn btn-info btn-sm float-left mr-1">
@@ -88,5 +88,5 @@
     </section>
     <!-- /.content -->
 </div>
-
+</form>
 @endsection

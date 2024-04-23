@@ -45,7 +45,7 @@
                                     <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content" rows="3">{{$post->content}}</textarea>                                </div>
                                 <div class="form-group">
                                     <label for="category_id">Категории</label>
-                                    <select class="form-control @error('category_id') is-invalid @enderror" id="category_id">
+                                    <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
                                         @foreach($categories as $k => $v)
                                         <option value="{{ $k }}" @if($k == $post->category_id) selected @endif>{{ $v }}</option>
                                         @endforeach
@@ -64,8 +64,17 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" name="thumbnail" id="thumbnail" class="custom-file-input">
-                                            <label class="custom-file-label" for="thumbnail">Choose file</label>
+                                            
+                                            
+                                            
+                                            <label  class="custom-file-label" for="thumbnail">
+                                            
+                                                Choose file
+                                           </label>
+
+                                           
                                         </div>
+                                        
                                     </div>
                                     <div><img src="{{ $post->getImage() }}" alt="" class="img-thumbnail mt-2" width="200"></div>
                                 </div>
