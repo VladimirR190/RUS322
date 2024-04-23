@@ -46,7 +46,7 @@ class Post extends Model
             $folder = date('Y-m-d');
             return $request->file('thumbnail')->store("images/{$folder}");
         }
-        return null;
+        return $image ? $image : 'images/2024-04-05/default.jpg';
     }
 
     public function getImage()

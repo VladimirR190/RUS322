@@ -63,7 +63,7 @@
                                     <label for="thubnail">Изображение</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" name="thumbnail" id="thumbnail" class="custom-file-input">
+                                            <input value="{{asset('uploads/'. $post->thumbnail)}}" type="file" name="thumbnail" id="thumbnail" class="custom-file-input">
                                             
                                             
                                             
