@@ -1,6 +1,13 @@
 @extends('admin.layouts.layout')
 
 @section('content')
+
+@if (session()->has('success'))
+<div class="alert alert-success">
+    {{session('success')}}
+</div>
+@endif
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
