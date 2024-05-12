@@ -55,7 +55,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="tags">Теги</label>
+                                        <label for="tags ">Теги</label>
                                         <select name="tags[]" id="tags" multiple="multiple"
                                             data-placeholder="Выбор тегов" class="select2 select2-hidden-accessible"
                                             style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true">

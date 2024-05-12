@@ -3,7 +3,7 @@
 @section('content')
 
 @if (session()->has('success'))
-<div class="alert alert-success">
+<div>
     {{session('success')}}
 </div>
 @endif
@@ -35,7 +35,7 @@
                             <h3 class="card-title">Вход</h3>
                         </div>
                         <!-- /.card-header -->
-                        <form action="{{ route('register.store') }}" method="post">
+                        <form action="{{ route('login.create') }}" method="post">
                             @csrf
                             <div class="input-group mb-3">
                                 <input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}">

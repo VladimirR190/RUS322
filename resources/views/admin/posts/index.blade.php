@@ -30,7 +30,7 @@
                             <h3 class="card-title">Список статей</h3>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('posts.store')}}" class="btn btn-primary mb-3">Добавить статью</a>
+                            <a href="{{route('posts.create')}}" class="btn btn-primary mb-3">Добавить статью</a>
                             @if (count($posts))
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover text-nowrap">

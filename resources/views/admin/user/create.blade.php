@@ -3,7 +3,7 @@
 @section('content')
 
 @if (session()->has('success'))
-<div class="alert alert-success">
+<div>
     {{session('success')}}
 </div>
 @endif

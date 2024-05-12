@@ -40,9 +40,11 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug)
     {
-        //
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $posts = $category->posts()->orderBy('id','desc')->paginate(2);
+        return view('categories.show', compact('category','posts'));
     }
 
     /**

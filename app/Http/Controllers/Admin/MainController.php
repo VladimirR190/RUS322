@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller

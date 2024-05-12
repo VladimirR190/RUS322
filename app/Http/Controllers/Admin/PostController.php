@@ -35,16 +35,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([
             'title' => 'required',
             'description' => 'required',
             'content' => 'required',
             'category_id' => 'required|integer',
+            
             'thumbnail' => 'nullable|image',
         ]);
 
         $data = $request->all();
+        
 
         // if ($request->hasFile('thumbnail')){
         //     $folder = date('Y-m-d');
@@ -63,9 +64,18 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function index1()
     {
-        //
+        $posts = Post::with('category')->orderBy('id','desc')->paginate(2);
+        return view('posts.index',compact('posts'));
+    }
+    public function show($slug)
+    {
+        $post = Post::where('slug',$slug)->firstOrFail();
+        $post->views += 1;
+        $post->update();
+        return view('posts.show', compact('post'));
+
     }
 
     /**
@@ -89,6 +99,7 @@ class PostController extends Controller
             'description' => 'required',
             'content' => 'required',
             'category_id' => 'required|integer',
+           
             'thumbnail' => 'nullable|image',
         ]);
 
